@@ -10,7 +10,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: 1.4.6
+        working-directory: ${{ env.tf_actions_working_dir }}
   
     steps:
 
@@ -21,6 +21,11 @@ jobs:
       uses: hashicorp/setup-terraform@v2
       with:
         terraform_version: ${{ secrets.TERRAFORM_VERSION }}
+
+    - name: Show Terraform version
+      id: version
+      run: terraform version
+      
 
     - name: Terraform init
       id: init
