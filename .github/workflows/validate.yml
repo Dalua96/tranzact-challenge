@@ -10,6 +10,7 @@ jobs:
     defaults:
       run:
         shell: bash
+        working-directory: 1.4.6
   
     steps:
 
@@ -32,7 +33,7 @@ jobs:
     
     - name: Terraform format
       id: fmt
-      run: terraform fmt -check
+      run: terraform fmt -check -recursive
 
     - name: Terraform validate
       id: validate

@@ -4,7 +4,7 @@ locals {
   project_name = "challenge"
   environment  = "test"
   location     = "eastus"
-  owner            = "Antonio_Alvarado"
+  owner        = "Antonio_Alvarado"
 }
 
 data "azurerm_client_config" "current" {}
@@ -36,7 +36,7 @@ module "sa" {
   rg_name      = azurerm_resource_group.rg1.name
   location     = local.location
   snet_address = module.vnet.snet
-  own_ip_pub   = data.http.ip.response_body
+       own_ip_pub   = data.http.ip.response_body
 
 
 }

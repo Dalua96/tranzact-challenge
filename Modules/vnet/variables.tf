@@ -4,6 +4,6 @@ variable "vnet_address" {}
 variable "snet_address" {}
 
 variable "owner" {
-    type = string
-    default = "Antonio_Alvarado"
+  type    = string
+  default = "Antonio_Alvarado"
 }

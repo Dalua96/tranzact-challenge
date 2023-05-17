@@ -1,8 +1,8 @@
 locals {
- project_name = "challenge"
- environment  = "test"
- location = "eastus"
- owner = "Antonio_Alvarado"
+  project_name = "challenge"
+  environment  = "test"
+  location     = "eastus"
+  owner        = "Antonio_Alvarado"
 }
 
 
@@ -16,7 +16,7 @@ resource "azurerm_key_vault" "azkv01" {
     default_action             = "Deny"
     bypass                     = "AzureServices"
     virtual_network_subnet_ids = [var.snet_address]
-    ip_rules = [var.own_ip_pub]
+    ip_rules                   = [var.own_ip_pub]
 
   }
 }

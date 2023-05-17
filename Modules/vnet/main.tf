@@ -1,10 +1,10 @@
 # comentario resource name
 
 locals {
- project_name = "challenge"
- environment  = "test"
- location = "eastus"
- owner = "Antonio_Alvarado"
+  project_name = "challenge"
+  environment  = "test"
+  location     = "eastus"
+  owner        = "Antonio_Alvarado"
 }
 
 resource "azurerm_virtual_network" "azvn01" {
@@ -12,7 +12,7 @@ resource "azurerm_virtual_network" "azvn01" {
   resource_group_name = var.rg_name
   location            = var.location
   address_space       = [var.vnet_address]
-      tags = {
+  tags = {
     Owner = local.owner
   }
 }

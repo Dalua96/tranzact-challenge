@@ -3,5 +3,5 @@ output "saname" {
 }
 
 output "container_name" {
-    value = azurerm_storage_container.azsacontainer.name
+  value = azurerm_storage_container.azsacontainer.name
 }
