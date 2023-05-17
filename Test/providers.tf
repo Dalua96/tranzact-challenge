@@ -5,12 +5,12 @@ terraform {
       version = "=3.56.0"
     }
   }
-  backend "azurerm" {
-    resource_group_name  = "challenge-test-rg"
-    storage_account_name = "challengetestsa"
-    container_name       = "challenge-test-container"
-    key                  = "terraform.tfstate"
-  }
+  #backend "azurerm" {
+  #  resource_group_name  = "challenge-test-rg"
+  #  storage_account_name = "challengetestsa"
+  #  container_name       = "challenge-test-container"
+  #  key                  = "terraform.tfstate"
+  #}
 
 }
 
