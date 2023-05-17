@@ -38,9 +38,9 @@ module "sa" {
   snet_address = module.vnet.snet
   own_ip_pub   = data.http.ip.response_body
 
-
 }
-#this a test
+
+
 module "kv" {
   source       = "../Modules/keyvault"
   rg_name      = azurerm_resource_group.rg1.name
