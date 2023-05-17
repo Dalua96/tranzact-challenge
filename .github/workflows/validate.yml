@@ -27,7 +27,9 @@ jobs:
       uses: haythem/public-ip@v1.3
 
     - name: Print Public IP
-      run: az storage account network-rule add --account-name challengetestsa --ip-address ${{ steps.ip.outputs.ip }}
+      run: |
+        az login
+        az storage account network-rule add --account-name challengetestsa --ip-address ${{ steps.ip.outputs.ip }}
 
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v2
