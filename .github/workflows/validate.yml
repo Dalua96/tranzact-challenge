@@ -26,10 +26,11 @@ jobs:
       id: ip
       uses: haythem/public-ip@v1.3
 
-    - name: Print Public IP
-      run: |
-        az login --service-principal -u ${{ secrets.ARM_CLIENT_ID }} -p ${{ secrets.ARM_CLIENT_SECRET }} --tenant ${{ secrets.ARM_TENANT_ID }}
-        az storage account network-rule add --account-name challengetestsa --ip-address ${{ steps.ip.outputs.ip }}
+    - name: az login
+      run: az login --service-principal -u ${{ secrets.ARM_CLIENT_ID }} -p ${{ secrets.ARM_CLIENT_SECRET }} --tenant ${{ secrets.ARM_TENANT_ID }}
+    
+    - name: set IP  into SA  
+      run: az storage account network-rule add --account-name challengetestsa --ip-address ${{ steps.ip.outputs.ipv4 }}
 
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v2
