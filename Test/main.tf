@@ -4,7 +4,7 @@ locals {
   project_name = "challenge"
   environment  = "test"
   location     = "eastus"
-  owner        = "Antonio_Alvarado"
+  owner            = "Antonio_Alvarado"
 }
 
 data "azurerm_client_config" "current" {}
