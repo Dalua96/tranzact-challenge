@@ -37,6 +37,6 @@ jobs:
 
     - name: Terraform validate
       id: validate
-      if: (success() || failiure())
+      if: (success() || failure())
       run: terraform validate -no-color
 
