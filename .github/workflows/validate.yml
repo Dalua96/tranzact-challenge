@@ -10,7 +10,6 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./main
   
     steps:
 
