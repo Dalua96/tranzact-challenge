@@ -36,7 +36,7 @@ module "sa" {
   rg_name      = azurerm_resource_group.rg1.name
   location     = local.location
   snet_address = module.vnet.snet
-       own_ip_pub   = data.http.ip.response_body
+  own_ip_pub   = data.http.ip.response_body
 
 
 }
