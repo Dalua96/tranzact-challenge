@@ -18,6 +18,32 @@ resource "azurerm_storage_account" "azsa" {
 
 }
 
+resource "azurerm_storage_account" "azsa2" {
+  name                     = "${local.project_name}${local.environment}sa02"
+  resource_group_name      = var.rg_name
+  location                 = var.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+  tags = {
+    Owner = local.owner
+  }
+
+}
+
+resource "azurerm_storage_account" "azsa3" {
+  name                     = "${local.project_name}${local.environment}sa03"
+  resource_group_name      = var.rg_name
+  location                 = var.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+  tags = {
+    Owner = local.owner
+  }
+
+}
+
+
+
 resource "azurerm_storage_account_network_rules" "sarule" {
   storage_account_id         = azurerm_storage_account.azsa.id
   default_action             = "Deny"
