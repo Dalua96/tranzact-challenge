@@ -22,18 +22,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     
-    - name: Public IP
-      id: ip
-      uses: haythem/public-ip@v1.3
-
     - name: az login
       run: az login --service-principal -u ${{ secrets.ARM_CLIENT_ID }} -p ${{ secrets.ARM_CLIENT_SECRET }} --tenant ${{ secrets.ARM_TENANT_ID }}
-    
-    - name: set IP  into SA  
-      run: az storage account network-rule add --account-name challengetestsa --ip-address ${{ steps.ip.outputs.ipv4 }}
-
-    - name: Sleep for 30 seconds
-      run: sleep 30s
 
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v2
@@ -58,13 +48,6 @@ jobs:
       if: (success() || failure())
       run: terraform validate -no-color
 
-    - name: Terraform Plan
-      id: plan
-      run: terraform plan -no-color
-    
-    - name: Terraform Apply
-      id: apply
-      run: terraform apply -auto-approve
 
 
 
