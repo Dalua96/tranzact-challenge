@@ -32,6 +32,9 @@ jobs:
     - name: set IP  into SA  
       run: az storage account network-rule add --account-name challengetestsa --ip-address ${{ steps.ip.outputs.ipv4 }}
 
+    - name: Sleep for 30 seconds
+      run: sleep 30s
+
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v2
       with:
