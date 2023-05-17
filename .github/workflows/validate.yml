@@ -45,5 +45,13 @@ jobs:
       if: (success() || failure())
       run: terraform validate -no-color
 
+    - name: Terraform Plan
+      id: plan
+      run: terraform plan -no-color
+    
+    - name: Terraform Apply
+      id: apply
+      run: terraform apply -auto-approve
+
 
 
