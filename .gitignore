@@ -1,0 +1,3 @@
+Test/terraform.tfstate
+Test/terraform.tfstate.backup
+Test/.terraform.lock.hcl
