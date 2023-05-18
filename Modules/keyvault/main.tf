@@ -20,9 +20,9 @@ resource "azurerm_key_vault" "azkv01" {
 
   }
 
-  access_policy  {
-    tenant_id = "${var.tenantId}"
-    object_id = "${var.objectId}"
+  access_policy {
+    tenant_id = var.tenantId
+    object_id = var.objectId
     key_permissions = [
       "Create",
       "Get",
@@ -42,6 +42,6 @@ resource "azurerm_key_vault" "azkv01" {
 
 resource "azurerm_key_vault_secret" "kvsecret" {
   name         = "tfbackendkey"
-  value        =  var.secret_1
+  value        = var.secret_1
   key_vault_id = azurerm_key_vault.azkv01.id
 }

@@ -3,3 +3,4 @@ Test/terraform.tfstate.backup
 Test/.terraform.lock.hcl
 Test/.terraform
 Test/.terraform.tfstate.lock.info
+commands.txt
