@@ -6,9 +6,9 @@ terraform {
     }
   }
   #backend "azurerm" {
-  #  resource_group_name  = "challenge-test-rg"
-  #  storage_account_name = "challengetestsa"
-  #  container_name       = "challenge-test-container"
+  #  resource_group_name  = "challenge-tst-alv-rg"
+  #  storage_account_name = "challengetstalvsa"
+  #  container_name       = "challenge-tst-container"
   #  key                  = "terraform.tfstate"
   #}
 
