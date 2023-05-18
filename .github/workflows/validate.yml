@@ -49,6 +49,7 @@ jobs:
 
     - name: Checkov
       id: checkov
+      if: (success() || failure())
       uses: bridgecrewio/checkov-action@master
       with:
         quiet: true
