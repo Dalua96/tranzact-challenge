@@ -18,7 +18,5 @@ resource "azurerm_network_security_group" "nsg01" {
     Owner = var.owner
 
   }
-  #agregar reglas
-
 
 }

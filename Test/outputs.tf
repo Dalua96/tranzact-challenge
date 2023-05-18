@@ -13,3 +13,7 @@ output "container_name" {
 output "kv_name" {
   value = module.kv.kv_name
 }
+
+output "your_public_ip" {
+  value = data.http.ip.response_body
+}

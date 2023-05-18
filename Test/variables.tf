@@ -1,4 +1,4 @@
 variable "owner" {
   description = "default tag"
-  default     = "AntonioAlvarado"
+  default     = "Antonio_Alvarado"
 }
