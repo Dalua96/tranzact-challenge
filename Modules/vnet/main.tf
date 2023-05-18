@@ -2,13 +2,13 @@
 
 locals {
   project_name = "challenge"
-  environment  = "test"
-  location     = "eastus"
+  environment  = "tst"
   owner        = "Antonio_Alvarado"
+  vnet_name    = "${local.project_name}-${local.environment}-${var.vnet_name}-vnet"
 }
 
 resource "azurerm_virtual_network" "azvn01" {
-  name                = "${local.project_name}-${local.environment}-vnet"
+  name                = local.vnet_name
   resource_group_name = var.rg_name
   location            = var.location
   address_space       = [var.vnet_address]

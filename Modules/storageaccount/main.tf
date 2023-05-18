@@ -1,13 +1,13 @@
 locals {
   project_name = "challenge"
-  environment  = "test"
-  location     = "eastus"
+  environment  = "tst"
   owner        = "Antonio_Alvarado"
+  sa_name      = "${local.project_name}${local.environment}${var.sa_name}sa"
 }
 
 
 resource "azurerm_storage_account" "azsa" {
-  name                     = "${local.project_name}${local.environment}sa"
+  name                     = local.sa_name
   resource_group_name      = var.rg_name
   location                 = var.location
   account_tier             = "Standard"

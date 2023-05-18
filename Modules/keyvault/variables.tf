@@ -1,5 +1,9 @@
 variable "rg_name" {}
 variable "location" {}
 variable "snet_address" {}
-variable "tenainId" {}
+variable "tenantId" {}
+variable "objectId" {}
 variable "own_ip_pub" {}
+variable "kv_name" {}
+variable "said" {}
+variable "secret_1" {}
