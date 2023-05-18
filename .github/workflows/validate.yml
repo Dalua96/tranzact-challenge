@@ -36,13 +36,13 @@ jobs:
       id: init
       run: terraform init
     
-    - name: Terraform format
+    - name: Terraform format validation
       id: fmt
       run: |
        cd ..
        terraform fmt -check -recursive
 
-    - name: Terraform validate
+    - name: Terraform configuration validation
       id: validate
       if: (success() || failure())
       run: terraform validate -no-color
