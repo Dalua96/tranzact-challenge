@@ -18,7 +18,7 @@ resource "azurerm_resource_group" "rg1" {
   name     = "${local.project_name}-${local.environment}-rg"
   location = local.location
   tags = {
-    Owner = local.owner
+    Owner = var.owner
   }
 }
 
